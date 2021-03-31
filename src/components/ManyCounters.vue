@@ -1,10 +1,6 @@
 <template>
   <div class="form">
-    <div v-if="isLoading">Loading data from DB...</div>
-    <div v-if="error">
-      {{ error }}
-    </div>
-    <div v-if="!isLoading">
+    <div>
       <button class="button-plus" action="button" v-on:click="addForm">
         +
       </button>
@@ -32,12 +28,6 @@ import * as types from "../store/mutationActionTypes";
 
 export default {
   name: "ManyCounters",
-  data() {
-    return {
-      isLoading: false,
-      error: null,
-    };
-  },
 
   components: {
     CounterForm,
