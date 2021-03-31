@@ -1,5 +1,4 @@
 import * as types from "./mutationActionTypes";
-export const STORAGE_KEY = "counters-vuejs2";
 
 // for testing
 if (navigator.userAgent.indexOf("PhantomJS") > -1) {
@@ -10,7 +9,7 @@ export const mutations = {
   [types.ADD_FORM](state) {
     state.counterValues = [
       ...state.counterValues,
-      { savedCounter: undefined, previousCounter: undefined },
+      { savedCounter: null, previousCounter: null },
     ];
   },
 
