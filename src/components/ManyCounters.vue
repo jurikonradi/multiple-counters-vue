@@ -9,11 +9,16 @@
         v-bind:key="index"
         v-bind:counterIndex="index"
       />
-      <div class="main-container">
+      <div class="main-buttons">
         <button class="save" type="button" v-on:click="saveCounters">
           Save
         </button>
-        <button class="restore" type="button" v-on:click="restoreCounters">
+        <button
+          class="restore"
+          type="button"
+          v-on:click="restoreCounters"
+          :disabled="counterValues[0].previousCounter === undefined"
+        >
           Restore
         </button>
       </div>
@@ -50,5 +55,5 @@ export default {
 </script>
 
 <style lang="sass" scoped>
-@import './ManyForms.sass'
+@import './ManyCounters.sass'
 </style>

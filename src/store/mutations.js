@@ -1,5 +1,5 @@
 import * as types from "./mutationActionTypes";
-export const STORAGE_KEY = "counters-vuejs";
+export const STORAGE_KEY = "counters-vuejs2";
 
 // for testing
 if (navigator.userAgent.indexOf("PhantomJS") > -1) {

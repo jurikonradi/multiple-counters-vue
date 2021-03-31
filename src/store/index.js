@@ -18,7 +18,14 @@ export default new Vuex.Store({
   plugins,
 });
 
-// worked:
+// state w/o localStorage, worked:
 // state: {
-//   counterValues: [{ savedCounter: null, previousCounter: 0 }],
+//   counterValues: [{ savedCounter: undefined, previousCounter: undefined }],
+// },
+
+// state with localStorage, worked: {
+// state: {
+//   counterValues: JSON.parse(window.localStorage.getItem(STORAGE_KEY)) || [
+//     { savedCounter: undefined, previousCounter: undefined },
+//   ],
 // },
