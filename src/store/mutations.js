@@ -1,3 +1,4 @@
+import * as types from "./mutationActionTypes";
 export const STORAGE_KEY = "counters-vuejs";
 
 // for testing
@@ -6,34 +7,34 @@ if (navigator.userAgent.indexOf("PhantomJS") > -1) {
 }
 
 export const mutations = {
-  addForm(state) {
+  [types.ADD_FORM](state) {
     state.counterValues = [
       ...state.counterValues,
       { savedCounter: undefined, previousCounter: undefined },
     ];
   },
 
-  increaseCounter(state, counterIndex) {
+  [types.UPDATE_COUNTER](state, { counterIndex, value }) {
+    state.counterValues[counterIndex].savedCounter = value;
+  },
+
+  [types.INCREASE_COUNTER](state, counterIndex) {
     state.counterValues[counterIndex].savedCounter++;
   },
 
-  decreaseCounter(state, counterIndex) {
+  [types.DECREASE_COUNTER](state, counterIndex) {
     state.counterValues[counterIndex].savedCounter--;
   },
 
-  saveCounters(state) {
+  [types.SAVE_COUNTERS](state) {
     state.counterValues.forEach(
       (counter) => (counter.previousCounter = counter.savedCounter || 0)
     );
   },
 
-  restoreCounters(state) {
+  [types.RESTORE_COUNTERS](state) {
     state.counterValues.forEach(
       (counter) => (counter.savedCounter = counter.previousCounter)
     );
-  },
-
-  updateCounter(state, { counterIndex, value }) {
-    state.counterValues[counterIndex].savedCounter = value;
   },
 };

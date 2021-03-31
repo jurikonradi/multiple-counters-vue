@@ -17,7 +17,7 @@
 </template>
 
 <script>
-// import { mapState } from "vuex";
+import * as types from "../store/mutationActionTypes";
 import ActionButtons from "./ActionButtons";
 
 export default {
@@ -34,7 +34,7 @@ export default {
       },
       set(value) {
         console.log("set: ", this.counterIndex, value);
-        this.$store.commit("updateCounter", {
+        this.$store.commit(types.UPDATE_COUNTER, {
           counterIndex: this.counterIndex,
           value: value,
         });
@@ -44,11 +44,17 @@ export default {
 
   methods: {
     increaseCounter() {
-      this.$store.dispatch("increaseCounter", this.counterIndex);
+      this.$store.commit(types.INCREASE_COUNTER, this.counterIndex);
     },
+    // increaseCounter() {
+    //   this.$store.dispatch(types.INCREASE_COUNTER, this.counterIndex);
+    // },
     decreaseCounter() {
-      this.$store.dispatch("decreaseCounter", this.counterIndex);
+      this.$store.commit(types.DECREASE_COUNTER, this.counterIndex);
     },
+    // decreaseCounter() {
+    //   this.$store.dispatch(types.DECREASE_COUNTER, this.counterIndex);
+    // },
     isNumber: function (evt) {
       evt = evt ? evt : window.event;
       var charCode = evt.which ? evt.which : evt.keyCode;

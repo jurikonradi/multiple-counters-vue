@@ -1,20 +1,19 @@
+import * as types from "./mutationActionTypes";
+
 export default {
-  addForm({ commit }) {
-    commit("addForm");
+  [types.ADD_FORM]({ commit }) {
+    commit(types.ADD_FORM);
   },
-  increaseCounter({ commit }, counterIndex) {
-    commit("increaseCounter", counterIndex);
+  [types.INCREASE_COUNTER]({ commit }, counterIndex) {
+    commit(types.INCREASE_COUNTER, counterIndex);
   },
-  decreaseCounter({ commit }, counterIndex) {
-    commit("decreaseCounter", counterIndex);
+  [types.DECREASE_COUNTER]({ commit }, counterIndex) {
+    commit(types.DECREASE_COUNTER, counterIndex);
   },
-  saveCounters({ commit }) {
-    commit("saveCounters");
+  [types.SAVE_COUNTERS]({ commit }) {
+    commit(types.SAVE_COUNTERS);
   },
-  restoreCounters({ commit }) {
-    commit("restoreCounters");
-  },
-  preventNoNumbers({ commit }, counterIndex) {
-    commit("preventNoNumbers", counterIndex);
+  [types.RESTORE_COUNTERS]({ commit }) {
+    commit(types.RESTORE_COUNTERS);
   },
 };

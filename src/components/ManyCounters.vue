@@ -28,6 +28,7 @@
 <script>
 import { mapState } from "vuex";
 import CounterForm from "./CounterForm.vue";
+import * as types from "../store/mutationActionTypes";
 
 export default {
   name: "ManyCounters",
@@ -46,13 +47,13 @@ export default {
   }),
   methods: {
     addForm() {
-      this.$store.dispatch("addForm");
+      this.$store.commit(types.ADD_FORM);
     },
     saveCounters() {
-      this.$store.dispatch("saveCounters");
+      this.$store.commit(types.SAVE_COUNTERS);
     },
     restoreCounters() {
-      this.$store.dispatch("restoreCounters");
+      this.$store.commit(types.RESTORE_COUNTERS);
     },
   },
 };
