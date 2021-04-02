@@ -46,24 +46,16 @@ export default {
     increaseCounter() {
       this.$store.commit(types.INCREASE_COUNTER, this.counterIndex);
     },
-    // increaseCounter() {
-    //   this.$store.dispatch(types.INCREASE_COUNTER, this.counterIndex);
-    // },
+
     decreaseCounter() {
       this.$store.commit(types.DECREASE_COUNTER, this.counterIndex);
     },
-    // decreaseCounter() {
-    //   this.$store.dispatch(types.DECREASE_COUNTER, this.counterIndex);
-    // },
-    isNumber: function (evt) {
-      evt = evt ? evt : window.event;
-      var charCode = evt.which ? evt.which : evt.keyCode;
-      if (
-        charCode > 31 &&
-        (charCode < 48 || charCode > 57) &&
-        charCode !== 46
-      ) {
-        evt.preventDefault();
+
+    isNumber: function (event) {
+      event = event ? event : window.event;
+      var charCode = event.which ? event.which : event.keyCode;
+      if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+        event.preventDefault();
       } else {
         return true;
       }
