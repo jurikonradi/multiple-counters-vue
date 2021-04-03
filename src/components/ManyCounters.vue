@@ -17,7 +17,7 @@
           class="restore"
           type="button"
           v-on:click="restoreCounters"
-          :disabled="counterValues[0].previousCounter === undefined"
+          :disabled="counterValues[0].previousCounter === null"
         >
           Restore
         </button>

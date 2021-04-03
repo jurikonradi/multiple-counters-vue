@@ -6,4 +6,4 @@ export const RESTORE_COUNTERS = "RESTORE_COUNTERS";
 export const UPDATE_COUNTER = "UPDATE_COUNTER";
 
 // for localStorage:
-export const STORAGE_KEY = "counters-vuejs";
+export const STORAGE_KEY = "counters-vuejs5";
